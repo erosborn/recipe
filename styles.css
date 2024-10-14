@@ -68,49 +68,36 @@ html {
     background-color: var(--teal-fade);
 }
 body {
+    width: 414px;
+    min-width: 414px;
     display: grid;
     grid-template-areas: 
         "header"
-        "search"
         "title"
+        "print"
         "aside"
         "social"
         "footer";
-    width: 414px;
-    min-width: 414px;
     background-color: var(--whiteish);
     margin: 0 auto;
     line-height: 1.25em;
 }
-main, form{
-    position: relative;
-    top: 100px;
+main {
+    width: 414px;
 }
 header {
     grid-area: header;
+    display: grid;
+    grid-template-areas: 
+        "nav"
+        "search";
+        width: 414px;
 }
 aside {
     grid-area: aside;
     background-color: var(--teal);
 }
-footer {
-    grid-area: footer;
-    background-color: var(--white);
-}
-form {
-    grid-area: search;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    width: 414px;
-    margin: 0 auto;
-    top: 100px;
-}
-#intro {
-    grid-area: intro;
-}
-#social {
-    grid-area: social;
-}
+
 h1, h2, h3 {
     font-family: "Bebas Neue", serif; 
 }
@@ -125,13 +112,16 @@ h2 {
 h3 {
     font-size: 25px;
 }
-nav a, nav span, menu li, #social li, footer {
+nav a, nav span, menu li, #social li {
     font-family: "Bebas Neue", serif;
     font-size: 20px;
 }
 p, dd, li, nav, input {
     font-family: "Montserrat", serif;
     font-size: 16px;
+}
+p {
+    padding: 10px;
 }
 dt{
     font-family: "Montserrat", serif;
@@ -146,6 +136,9 @@ nav {
     position: fixed;
     top: 0;
     z-index:5;
+    display: grid;
+    grid-template-areas: 
+        "hamberger logo signup";
 }
 nav ul {
     grid-area: hamberger;
@@ -197,7 +190,14 @@ nav h2 {
     width: 1px;
 }
 #logo {
+    grid-area: logo;
+    display: block;
+    position:absolute;
+    place-content: center;
     background-color: var(--orange);
+}
+#sign-in {
+    grid-area: signup;
 }
 #star {
     stroke: var(--white);
@@ -207,34 +207,56 @@ nav h2 {
     stroke: var(--white);
     fill: var(--orange);
 }
-
+form {
+    grid-area: search;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 75%;
+    margin: 0 auto;
+    top: 100px;
+}
 form input {
     border: solid 3px var(--orange);
-    
 }
 form button {
-    width: 50px;
     background-color: var(--orange);
     border: solid 3px var(--orange);
 }
-
+#intro {
+    grid-area: intro;
+}
 #intro h1 {
     grid-area: title;
     padding: 25px;
 }
 #intro menu {
+    grid-area: print;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     color: var(--orange);
     list-style: none;
 }
-#intro p {
-    padding: 10px;
-}
 #intro img {
     width: 100%
 }
-
+#social {
+    grid-area: social;
+}
+footer {
+    grid-area: footer;
+    background-color: var(--white);
+}
+footer p {
+    font-family: "Bebas Neue", serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 0;
+}
+footer img {
+    width: 300px;
+    margin: 0 auto;
+}
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
 
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
