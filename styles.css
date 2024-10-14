@@ -120,7 +120,7 @@ p, dd, li, nav, input {
     font-family: "Montserrat", serif;
     font-size: 16px;
 }
-p {
+p, #ingredients, #recipe {
     padding: 10px;
 }
 dt{
@@ -240,8 +240,20 @@ form button {
 #intro img {
     width: 100%
 }
+#directions {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+#directions li {
+    list-style: decimal;
+    padding: 10px;
+}
+aside {
+    padding: 10px;
+}
 #social {
     grid-area: social;
+
 }
 footer {
     grid-area: footer;
