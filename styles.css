@@ -61,42 +61,40 @@ table {
 }
 
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
-body {
-    min-width: 414px;
+html {
+    background-color: var(--teal-fade);
 }
-
+body {
+    width: 414px;
+    min-width: 414px;
+    background-color: var(--white);
+    margin: 0 auto; 
+}
 h1, h2, h3 {
     font-family: "Bebas Neue", serif; 
 }
-
 h1 {
     font-size: 40px;
 }
-
 h2 {
     font-size: 30px;
 }
-
 h3 {
     font-size: 25px;
 }
-
 nav a, nav span, menu li, #social li, footer {
     font-family: "Bebas Neue", serif;
     font-size: 20px;
 }
-
 p, dd, li, nav, input {
     font-family: "Montserrat", serif;
     font-size: 16px;
 }
-
 dt{
     font-family: "Montserrat", serif;
     font-size: 16px;
     font-weight: 700;
 }
-
 nav {
     grid-area: nav;
     min-width: 414px;
@@ -107,7 +105,7 @@ nav {
     z-index:5;
 }
 nav ul {
-    grid-area: hamburger;
+    grid-area: hamberger;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -155,15 +153,35 @@ nav h2 {
     height: 1px;
     width: 1px;
 }
-
+#logo {
+    background-color: var(--orange);
+}
 #star {
     stroke: var(--white);
     fill: var(--white);
 }
-
 #star-filled {
     stroke: var(--white);
     fill: var(--orange);
+}
+form {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    top: 50px;
+    width: 414px;
+    margin: 0 auto;
+}
+form input {
+    border: solid 3px var(--orange);
+    
+}
+form button {
+    width: 50px;
+    background-color: var(--orange);
+}
+#intro img {
+    width: 100%
 }
 
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
