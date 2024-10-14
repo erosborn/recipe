@@ -50,34 +50,77 @@ table {
 	border-spacing: 0;
 }
 /* -------------------- ROOT VARIABLES --------------------------------------- */
+
 :root {
     font-family: "Montserrat", serif;
     font-size: 16px;
     --black: #0D0D0D;
-    --white: #F2F2F2;
+    --white: #ffffff;
+    --whiteish: #F2F2F2;
     --teal: #7ABFBF;
     --teal-fade: rgba(122, 191, 191, .5);
     --orange: #EB5428;
 }
 
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+
 html {
     background-color: var(--teal-fade);
 }
 body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "search"
+        "title"
+        "aside"
+        "social"
+        "footer";
     width: 414px;
     min-width: 414px;
+    background-color: var(--whiteish);
+    margin: 0 auto;
+    line-height: 1.25em;
+}
+main, form{
+    position: relative;
+    top: 100px;
+}
+header {
+    grid-area: header;
+}
+aside {
+    grid-area: aside;
+    background-color: var(--teal);
+}
+footer {
+    grid-area: footer;
     background-color: var(--white);
-    margin: 0 auto; 
+}
+form {
+    grid-area: search;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 414px;
+    margin: 0 auto;
+    top: 100px;
+}
+#intro {
+    grid-area: intro;
+}
+#social {
+    grid-area: social;
 }
 h1, h2, h3 {
     font-family: "Bebas Neue", serif; 
 }
 h1 {
     font-size: 40px;
+    text-align: center;
 }
 h2 {
     font-size: 30px;
+    text-align: center;
 }
 h3 {
     font-size: 25px;
@@ -164,14 +207,7 @@ nav h2 {
     stroke: var(--white);
     fill: var(--orange);
 }
-form {
-    position: absolute;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    top: 50px;
-    width: 414px;
-    margin: 0 auto;
-}
+
 form input {
     border: solid 3px var(--orange);
     
@@ -179,6 +215,21 @@ form input {
 form button {
     width: 50px;
     background-color: var(--orange);
+    border: solid 3px var(--orange);
+}
+
+#intro h1 {
+    grid-area: title;
+    padding: 25px;
+}
+#intro menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: var(--orange);
+    list-style: none;
+}
+#intro p {
+    padding: 10px;
 }
 #intro img {
     width: 100%
